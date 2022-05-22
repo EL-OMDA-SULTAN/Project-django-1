@@ -1,0 +1,68 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    <style>
+        body {
+            background-color: bisque;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+    
+        .fo {
+            border-radius: 30px;
+            background-color: cadetblue;
+            width: 590px;
+            height: 500px;
+            margin: auto;
+            margin-top: 10px;
+            padding: 20px;
+            font-size: 20px;
+            
+        }
+    
+        .fo input {
+            border-radius: 20px;
+            height: 20px;
+            padding: 5px;
+            font-weight: bolder;
+            text-align: center;
+        }
+    
+        .fo button {
+            width: 20%;
+            margin-top: 20px;
+            margin-left: 40%;
+            height: 30px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+    
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--Register-->
+    <h1>Register</h1>
+    <div class="container py-5 fo">
+        <form method="POST">
+            {% csrf_token %}
+            {{ register_form }}
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+        <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>
